@@ -10,8 +10,9 @@ public class Constant {
      */
     public static List<String> SUS_PACKAGES = new ArrayList<String>() {
         {
-            add("net.rebeyond.");
-            add("com.metasploit.");
+            add("net.rebeyond."); // behinder
+            add("com.metasploit."); // metasploit
+            add("memory_shell.servlet"); // antsword
         }
     };
 
@@ -63,6 +64,10 @@ public class Constant {
             add("ProcessBuilder");
             add("getRuntime");
             add("shell");
+            add(".getClassLoader()).Q(");// godzilla
+            add(".getAttribute(\"payload\")).newInstance("); // godzilla
+            add("new AntSwordFilter(this.get"); // antsword
+            add(".getClass().getClassLoader()).g("); // antsword&behinder
         }
     };
 
