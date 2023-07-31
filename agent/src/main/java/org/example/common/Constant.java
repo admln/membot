@@ -24,6 +24,7 @@ public class Constant {
             add("javax.servlet.http.HttpServlet");
             add("javax.servlet.GenericServlet");
             add("org.apache.jasper.runtime.HttpJspBase");
+            add("javax.websocket.Endpoint"); // wsMemShell
         }
     };
 
