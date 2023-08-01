@@ -17,9 +17,18 @@
 | 类型 | 是否覆盖 | 说明               |
 |----|------|------------------|
 | 冰蝎 |   ✔   | 支持Agent和非Agent方式 |
-|    |      |                  |
+| 哥斯拉 |   ✔   |                  |
+| 蚁剑 |   ✔   |                  |
+| websocket |   ✔   |                  |
+| ReGeorg |   ✔   |                  |
+| NeoreGeorg |   ✔   |                  |
+| UpgradeMemshell |   ✔   |                  |
+| Suo5 |   ✔   |                  |
+| BastionFilter |   ✔   |                  |
 
 
 - Reference:
 
   [copagent](https://github.com/LandGrey/copagent)
+
+  [arthas](https://github.com/alibaba/arthas)

@@ -14,6 +14,8 @@ public class Constant {
             add("com.metasploit."); // metasploit
             add("memory_shell.servlet"); // antsword
             add("org.apache.coyote.module."); // godzilla
+            add("com.summersec.x"); // ShiroAttach2
+            add("com.alter.x"); // ShiroAttach2-Suo5
         }
     };
 
@@ -72,6 +74,12 @@ public class Constant {
             add(".getClass().getClassLoader()).g("); // antsword&behinder
             add("out.print(\"Georg says, 'All seems fine'\")"); // ReGeorg
             add("NeoreGeorgServlet.getFieldValue(mapperListener_Mapper"); // NeoreGeorg
+            add("Suo5Filter"); // ShiroAttach2-Suo5
+            add("UpgradeMemshell"); // ShiroAttach2-UpgradeMemshell-Executor
+            add("upgradeProtocols.put(upgradeProtocol, new"); // ShiroAttach2-UpgradeMemshell-Executor
+            add("new String[]{\"cmd.exe\", \"/c\","); // ShiroAttach2-UpgradeMemshell-Executor
+            add("new String[]{\"/bin/sh\", \"-c\","); // ShiroAttach2-UpgradeMemshell-Executor
+            add("BastionFilter"); // ShiroAttach2-BastionFilter
         }
     };
 
