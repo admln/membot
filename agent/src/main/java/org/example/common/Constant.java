@@ -13,6 +13,7 @@ public class Constant {
             add("net.rebeyond."); // behinder
             add("com.metasploit."); // metasploit
             add("memory_shell.servlet"); // antsword
+            add("org.apache.coyote.module."); // godzilla
         }
     };
 
@@ -69,6 +70,8 @@ public class Constant {
             add(".getAttribute(\"payload\")).newInstance("); // godzilla
             add("new AntSwordFilter(this.get"); // antsword
             add(".getClass().getClassLoader()).g("); // antsword&behinder
+            add("out.print(\"Georg says, 'All seems fine'\")"); // ReGeorg
+            add("NeoreGeorgServlet.getFieldValue(mapperListener_Mapper"); // NeoreGeorg
         }
     };
 
