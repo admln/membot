@@ -28,6 +28,7 @@ public class Constant {
             add("javax.servlet.GenericServlet");
             add("org.apache.jasper.runtime.HttpJspBase");
             add("javax.websocket.Endpoint"); // wsMemShell
+            add("org.apache.catalina.valves.ValveBase"); //valve
         }
     };
 
@@ -66,7 +67,7 @@ public class Constant {
         {
             add("javax.crypto.");
             add("ProcessBuilder");
-            add("getRuntime");
+            add("getRuntime()");
             add("shell");
             add(".getClassLoader()).Q(");// godzilla
             add(".getAttribute(\"payload\")).newInstance("); // godzilla
