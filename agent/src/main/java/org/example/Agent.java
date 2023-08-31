@@ -118,6 +118,10 @@ public class Agent {
         List<Class<?>> riskClasses = new ArrayList<>();
         // 后置-检测风险代码内容
         for (Class<?> clazz : resultClasses) {
+            // 这里是把实体SHELL映射到内存的Servlet过滤掉，目的是只告警内存SHELL
+            if(clazz.getName().endsWith("_jsp")) {
+                continue;
+            }
             // TODO:这里优化，把获取clazz明文的方式变成类似jad直接内存中反编译，然后将dumpClass方法后移，会省时
             ClassUtils.dumpClass(ins, clazz.getName(), false, Integer.toHexString(clazz.getClassLoader().hashCode()));
             File dumpPath = PathUtils.getStorePath(clazz, false);
