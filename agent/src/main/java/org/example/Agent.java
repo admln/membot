@@ -6,6 +6,8 @@ import org.example.utils.LogUtils;
 import org.example.utils.PathUtils;
 import org.example.utils.SearchUtils;
 
+import javax.tools.JavaCompiler;
+import javax.tools.ToolProvider;
 import java.io.File;
 import java.lang.instrument.ClassFileTransformer;
 import java.lang.instrument.IllegalClassFormatException;
@@ -16,7 +18,9 @@ import java.util.List;
 import java.util.Set;
 
 public class Agent {
-    public static File agent_work_directory = null;
+    public static File agent_work_directory = new File(PathUtils.getCurrentDirectory());
+
+    static boolean isDumpAllClasses = false;
 
     public static void agentmain(String agentArgs, Instrumentation instrumentation) {
         catchThief(agentArgs, instrumentation);
@@ -47,12 +51,14 @@ public class Agent {
         }
 
         // 单独保存已加载的类名及 hashcode、classloader、classloader hashcode 信息
-        agent_work_directory = new File(PathUtils.getCurrentDirectory());
-        File allLoadedClassFile = new File(new File(agent_work_directory, "logs"), "allLoadedClasses.txt");
-        LogUtils.logit("Prepared Store All Loaded Classes Name ...");
-        PathUtils.appendTextToFile(allLoadedClassFile, "[*] Format: [classname | class-hashcode | classloader | classloader-hashcode]\n");
-        ClassUtils.storeAllLoadedClassesName(allLoadedClassFile, loadedClasses);
-        LogUtils.logit("All Loaded Classes Names Store in : " + allLoadedClassFile.getAbsolutePath());
+        // 后可改为根据服务端传参来决定
+        if(isDumpAllClasses) {
+            File allLoadedClassFile = new File(new File(agent_work_directory, "logs"), "allLoadedClasses.txt");
+            LogUtils.logit("Prepared Store All Loaded Classes Name ...");
+            PathUtils.appendTextToFile(allLoadedClassFile, "[*] Format: [classname | class-hashcode | classloader | classloader-hashcode]\n");
+            ClassUtils.storeAllLoadedClassesName(allLoadedClassFile, loadedClasses);
+            LogUtils.logit("All Loaded Classes Names Store in : " + allLoadedClassFile.getAbsolutePath());
+        }
 
         if (name.equals("[unknown]")) { // 默认没有指定具体过滤类名的流程
             for (Class<?> clazz : loadedClasses) {
@@ -118,10 +124,12 @@ public class Agent {
         List<Class<?>> riskClasses = new ArrayList<>();
         // 后置-检测风险代码内容
         for (Class<?> clazz : resultClasses) {
+
             // 这里是把实体SHELL映射到内存的Servlet过滤掉，目的是只告警内存SHELL
             if(clazz.getName().endsWith("_jsp")) {
                 continue;
             }
+
             // TODO:这里优化，把获取clazz明文的方式变成类似jad直接内存中反编译，然后将dumpClass方法后移，会省时
             ClassUtils.dumpClass(ins, clazz.getName(), false, Integer.toHexString(clazz.getClassLoader().hashCode()));
             File dumpPath = PathUtils.getStorePath(clazz, false);

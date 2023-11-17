@@ -67,6 +67,14 @@ public class Main {
              * 用于关联上tool.jar的classpath、判断JAVA版本
              * add "-Xbootclasspath/a" command line start agent
              * java <opts> -jar cop.jar <pid> </path/to/agent.jar> <dumpClassName>
+             * TODO 如何更优雅的方式引用tools.jar
+             * <dependency>
+             *<groupId>jdk</groupId>
+             *<artifactId>tools</artifactId>
+             *<version>1.0.0</version>
+             *<scope>system</scope>
+             *<systemPath>${java.home}/../lib/tools.jar</systemPath>
+             *</dependency>
              * */
             List<String> opts = new ArrayList<>();
             opts.add("-jar");

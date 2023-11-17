@@ -1,4 +1,4 @@
-# membot ![release](https://img.shields.io/badge/version-0.1-orange.svg)
+# membot ![release](https://img.shields.io/badge/version-0.2-orange.svg)
 
 **A java memory web shell extracting tool**
 
@@ -14,17 +14,43 @@
 
 - Cover
 
-| 类型 | 是否覆盖 | 说明               |
-|----|------|------------------|
-| 冰蝎 |   ✔   | 支持Agent和非Agent方式 |
-| 哥斯拉 |   ✔   |                  |
-| 蚁剑 |   ✔   |                  |
-| websocket |   ✔   |                  |
-| ReGeorg |   ✔   |                  |
-| NeoreGeorg |   ✔   |                  |
-| UpgradeMemshell |   ✔   |                  |
-| Suo5 |   ✔   |                  |
-| BastionFilter |   ✔   |                  |
+| 类型              | 类名                                   | 方法名                | 是否覆盖 |
+|-----------------|--------------------------------------|--------------------|------|
+| servlet型        | javax.servlet.Servlet                | service            | ✔    |
+| servlet型        | javax.servlet.http.HttpServlet       | doGet              | ✔    |
+| servlet型        | javax.servlet.http.HttpServlet       | doPost             | ✔    |
+| servlet型        | javax.servlet.http.HttpServlet       | doHead             | ✔    |
+| servlet型        | javax.servlet.http.HttpServlet       | doPut              | ✔    |
+| servlet型        | javax.servlet.http.HttpServlet       | doDelete           | ✔    |
+| servlet型        | javax.servlet.http.HttpServlet       | doTrace            | ✔    |
+| servlet型        | javax.servlet.http.HttpServlet       | doOptions          | ✔    |
+| filter型         | javax.servlet.Filter                 | doFilter           | ✔    |
+| filter型         | javax.servlet.http.HttpFilter        | doFilter           | ✔    |
+| listener型       | javax.servlet.ServletRequestListener | requestDestroyed   | ✔    |
+| listener型       | javax.servlet.ServletRequestListener | requestInitialized | ✔    |
+| Valve型          | org.apache.catalina.Valve            | invoke             | ✔    |
+| 字节码增强型          |                                      |                    | ✔    |
+| CmdWs           |                                      |                    | ✔    |
+| CmdBase64Ws     |                                      |                    | ✔    |
+| JSPJSWs         |                                      |                    | ✔    |
+| JSPJSBase64Ws   |                                      |                    | ✔    |
+| PystingerFilter |                                      |                    | ✔    |
+| SorFilter       |                                      |                    | ✔    |
+| Behinder        |                                      |                    | ✔    |
+| Godzilla        |                                      |                    | ✔    |
+| antsword        |                                      |                    | ✔    |
+| websocket       |                                      |                    | ✔    |
+| ReGeorg         |                                      |                    | ✔    |
+| NeoreGeorg      |                                      |                    | ✔    |
+| UpgradeMemshell |                                      |                    | ✔    |
+| Suo5            |                                      |                    | ✔    |
+| BastionFilter   |                                      |                    | ✔    |
+
+- Todo:
+
+  spring型
+
+  ysoserial工具注入
 
 
 - Reference:
