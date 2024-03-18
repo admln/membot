@@ -6,7 +6,7 @@
 
     <groupId>org.example</groupId>
     <artifactId>membot</artifactId>
-    <version>0.2-SNAPSHOT</version>
+    <version>0.5-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
         <module>agent</module>

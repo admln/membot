@@ -4,7 +4,7 @@
 
 - What:
 
-  侵入式，目前的目标是能够从内存中筛选出已知内存马植入软件的恶意代码。
+  侵入式，从WEB容器内存中筛选出已知的内存马并将其源码反编译后转储到本地。
 
 - Usage:
 
@@ -45,6 +45,42 @@
 | UpgradeMemshell |                                      |                    | ✔    |
 | Suo5            |                                      |                    | ✔    |
 | BastionFilter   |                                      |                    | ✔    |
+| ReGeorg内存马      |                                      |                    | ✔    |
+| NeoreGeorg内存马   |                                      |                    | ✔    |
+| CmdWs           |                                      |                    | ✔    |
+| CmdBase64Ws     |                                      |                    | ✔    |
+| JSPJSWs         |                                      |                    | ✔    |
+| JSPJSBase64Ws   |                                      |                    | ✔    |
+| PystingerFilter |                                      |                    | ✔    |
+| SorFilter       |                                      |                    | ✔    |
+
+- Detect features
+
+[《各类Java内存马-植入&检测》](https://www.yuque.com/daemon-v2sjv/okfr9p/db0xgywk3r1756f0?singleDoc# )
+
+- Web containers
+
+| 容器        | 系统        | 进程名称                                          | 链接                                                                             |
+|-----------|-----------|-----------------------------------------------|--------------------------------------------------------------------------------|
+| tomcat    | win/linux | org.apache.catalina.startup.Bootstrap         | https://tomcat.apache.org/download-80.cgi                                      |
+| weblogic  | win/linux | weblogic.Server                               | https://www.oracle.com/middleware/technologies/fusionmiddleware-downloads.html |
+| jboss     | win/linux | org.jboss.modules.Main                        | https://developers.redhat.com/products/eap/download                            |
+| wildfly   | linux     | org.wildfly.bootable.launcher.WildFlyLauncher | https://www.wildfly.org/                                                       |
+| websphere | win/linux | com.ibm.ws.bootstrap.WSLauncher               | https://www.ibm.com/cloud/blog/websphere-trial-options-and-downloads           |
+| jetty     | linux     | org.eclipse.jetty.start.Main                  | https://eclipse.dev/jetty/download.php                                         |
+| resin     | win/linux | com.caucho.server.resin.Resin                 | https://caucho.com/products/resin/download/gpl#download                        |
+
+- JAVA Version
+
+| 类型                      | 子类型 | 版本   |
+|-------------------------|-----|------|
+| Sun/Oracle JDK、Open JDK | JDK | >1.6 |
+| Sun/Oracle JDK、Open JDK | JRE | >1.6 |
+| IBM JDK                 | JRE | >1.8 |
+
+- Physical memory
+  
+ <100M
 
 - Todo:
 
