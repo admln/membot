@@ -1,4 +1,4 @@
-# membot ![release](https://img.shields.io/badge/version-0.2-orange.svg)
+# membot ![release](https://img.shields.io/badge/version-0.5-orange.svg)
 
 **A java memory web shell extracting tool**
 
